@@ -3,16 +3,17 @@ const containers = document.querySelectorAll('.container')
 
 draggables.forEach(draggable => {
     draggable.addEventListener('dragstart', () => {
-        draggable.classList.add('.dragging')
+        draggable.classList.add('dragging')
     })
 
     draggable.addEventListener('dragend', () => {
-        draggable.classList.remove('.dragging')
+        draggable.classList.remove('dragging')
     })
 })
 
 containers.forEach(container => {
     container.addEventListener('dragover', () => {
-        console.log('drag over')
+       const draggable = document.querySelector('.dragging')
+       container.appendChild(draggable)
     })
 })
