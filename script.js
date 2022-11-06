@@ -6,7 +6,13 @@ draggables.forEach(draggable => {
         draggable.classList.add('.dragging')
     })
 
-    dragging.addEventListener('dragend', () => {
+    draggable.addEventListener('dragend', () => {
         draggable.classList.remove('.dragging')
+    })
+})
+
+containers.forEach(container => {
+    container.addEventListener('dragover', () => {
+        console.log('drag over')
     })
 })
